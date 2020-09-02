@@ -1,5 +1,5 @@
 __pycache__/
 cache-directory/
-env
-settings.py
-node_modules
+responder_backend/env
+responder_backend/settings.py
+react_frontend/node_modules
