@@ -15,5 +15,4 @@ RUN pip install -r requirements.txt
 
 COPY ./responder_backend ./
 
-EXPOSE 8080
 CMD [ "python", "./responder_backend/main.py" ]
