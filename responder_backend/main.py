@@ -9,7 +9,7 @@ from mongoengine import connect
 connect(DB_NAME, host=MONGO_URL, alias='default')
 
 #Reactのstaticフォルダの指定
-api = responder.API(static_dir="../react_frontend/build/static", templates_dir="../react_frontend/build")
+api = responder.API(static_dir="./build/static", templates_dir="./build")
 
 #ホームにアクセスするとReactのviewが表示される
 @api.route("/")

@@ -1,6 +1,0 @@
-Dockerfile
-README.md
-responder_backend/__pycache__
-responder_backend/env
-responder_backend/cache-directory
-react_frontend/node_modules
