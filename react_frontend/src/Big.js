@@ -9,6 +9,7 @@ class Big extends React.Component {
 
     render() {
       const elements = [
+        // ノードのデータ
         { data: { id: 'one', label: 'Node 1' }, position: { x: 100, y: 300 } },
         { data: { id: 'two', label: 'Node 2' }, position: { x: 500, y: 300 } },
         { data: { id: 'three', label: 'Node 3' }, position: { x: 605, y: 245 } },
@@ -18,6 +19,7 @@ class Big extends React.Component {
         { data: { id: 'seven', label: 'Node 7' }, position: { x: 445, y: 211 } },
         { data: { id: 'eight', label: 'Node 8' }, position: { x: 111, y: 455 } },
         { data: { id: 'nine', label: 'Node 9' }, position: { x: 785, y: 127 } },
+        // エッジのデータ
         { data: { source: 'four', target: 'two', label: 'Edge from Node1 to Node2' } },
         { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } },
         { data: { source: 'four', target: 'two', label: 'Edge from Node1 to Node2' } },

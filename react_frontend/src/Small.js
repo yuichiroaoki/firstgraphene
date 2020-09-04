@@ -9,6 +9,7 @@ class Small extends React.Component {
 
     render() {
       const elements = [
+        // ノードのデータ
         { data: { id: 'one', label: 'Node 1' }, position: { x: 100, y: 300 } },
         { data: { id: 'two', label: 'Node 2' }, position: { x: 600, y: 300 } },
         { data: { id: 'three', label: 'Node 3' }, position: { x: 400, y: 200 } },
@@ -20,6 +21,7 @@ class Small extends React.Component {
         { data: { id: 'two', label: 'Node 2' }, position: { x: 500, y: 300 } },
         { data: { id: 'two', label: 'Node 245' }, position: { x: 500, y: 300 } },
         { data: { id: 'two', label: 'Node 2' }, position: { x: 500, y: 300 } },
+        // エッジのデータ
         { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } },
         { data: { source: 'one', target: 'three', label: 'Edge from Node1 to Node2' } },
         { data: { source: 'one', target: 'four', label: 'Edge from Node1 to Node2' } },

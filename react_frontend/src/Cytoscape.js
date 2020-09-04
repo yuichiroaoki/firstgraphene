@@ -9,8 +9,10 @@ class Cytoscape extends React.Component {
 
     render() {
       const elements = [
+        // ノードのデータ
         { data: { id: 'one', label: 'Node 1' }, position: { x: 100, y: 300 } },
         { data: { id: 'two', label: 'Node 2' }, position: { x: 500, y: 300 } },
+        // エッジのデータ
         { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } }
      ];
 
