@@ -9,7 +9,10 @@ from mongoengine import connect
 connect(DB_NAME, host=MONGO_URL, alias='default')
 
 #Reactのstaticフォルダの指定
+#production
 api = responder.API(static_dir="./build/static", templates_dir="./build")
+#development
+# api = responder.API()
 
 #ホームにアクセスするとReactのviewが表示される
 @api.route("/")
@@ -33,4 +36,4 @@ view = responder.ext.GraphQLView(api=api, schema=schema)
 api.add_route("/graph", view)
 
 if __name__ == '__main__':
-    api.run(port=8080)
+    api.run()
