@@ -10,29 +10,29 @@ import LayersIcon from '@material-ui/icons/Layers';
 
 export const mainListItems = (
   <div>
-    <ListItem button>
+    <ListItem button component="a" href="/">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component="a" href="/big">
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="レーダーチャート" />
+      <ListItemText primary="大規模グラフ" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component="a" href="/small">
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="ヒストグラム" />
+      <ListItemText primary="小規模グラフ" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="グラフ" />
+      <ListItemText primary="ヒストグラム" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
