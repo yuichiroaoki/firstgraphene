@@ -18,6 +18,8 @@ import Cytoscape from './Cytoscape';
 import  {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Big from './Big';
 import Small from './Small';
+import Nodes from './Nodes';
+import Help from './Help';
 
 const drawerWidth = 240;
 
@@ -153,6 +155,9 @@ export default function Dashboard() {
             <Route exact path="/" component={Cytoscape} />
             <Route exact path="/big" component={Big} />
             <Route exact path="/small" component={Small} />
+            <Route exact path="/nodes" component={Nodes} />
+            <Route exact path="/help" component={Help} />
+
           </Switch>
         </main>
 

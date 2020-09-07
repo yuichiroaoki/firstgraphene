@@ -19,14 +19,16 @@ class Cytoscape extends React.Component {
       height: window.innerHeight-64
     })
   }
-
+     
     render() {
       const {elements, height} = this.state;
         return (
           <Box height={height}>
             <CytoscapeComponent 
                 elements={elements}
-                cy={(cy) => {this.cy = cy}}
+                cy={(cy) => {
+                  this.cy = cy
+                }}
                 style={ { height:'100%' } }
                 stylesheet={Style}
                 />

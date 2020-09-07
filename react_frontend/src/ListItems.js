@@ -3,10 +3,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import ExploreIcon from '@material-ui/icons/Explore';
+import HelpIcon from '@material-ui/icons/Help';
+import TableChartIcon from '@material-ui/icons/TableChart';
 
 export const mainListItems = (
   <div>
@@ -18,27 +19,33 @@ export const mainListItems = (
     </ListItem>
     <ListItem button component="a" href="/big">
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="大規模グラフ" />
     </ListItem>
     <ListItem button component="a" href="/small">
       <ListItemIcon>
-        <PeopleIcon />
+        <ExploreIcon />
       </ListItemIcon>
       <ListItemText primary="小規模グラフ" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component="a" href="/nodes">
       <ListItemIcon>
-        <BarChartIcon />
+        <TableChartIcon />
       </ListItemIcon>
-      <ListItemText primary="ヒストグラム" />
+      <ListItemText primary="ノード情報" />
     </ListItem>
     <ListItem button component="a" target="blank" href="https://github.com/yuichiroaoki/firstgraphene">
       <ListItemIcon>
-        <LayersIcon />
+        <GitHubIcon />
       </ListItemIcon>
       <ListItemText primary="Source Code" />
+    </ListItem>
+    <ListItem button component="a" href="/help">
+      <ListItemIcon>
+        <HelpIcon />
+      </ListItemIcon>
+      <ListItemText primary="ヘルプ" />
     </ListItem>
   </div>
 );

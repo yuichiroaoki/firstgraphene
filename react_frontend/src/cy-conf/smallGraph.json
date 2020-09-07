@@ -1,0 +1,125 @@
+[
+  {
+    "data": {
+      "id": "one",
+      "label": "Node 1"
+    },
+    "position": {
+      "x": 100,
+      "y": 300
+    }
+  },
+  {
+    "data": {
+      "id": "two",
+      "label": "Node 2"
+    },
+    "position": {
+      "x": 600,
+      "y": 300
+    }
+  },
+  {
+    "data": {
+      "id": "three",
+      "label": "Node 3"
+    },
+    "position": {
+      "x": 400,
+      "y": 200
+    }
+  },
+  {
+    "data": {
+      "id": "four",
+      "label": "Node 4"
+    },
+    "position": {
+      "x": 450,
+      "y": 350
+    }
+  },
+  {
+    "data": {
+      "id": "five",
+      "label": "Node 2"
+    },
+    "position": {
+      "x": 120,
+      "y": 300
+    }
+  },
+  {
+    "data": {
+      "id": "nine",
+      "label": "Node 9"
+    },
+    "position": {
+      "x": 450,
+      "y": 380
+    }
+  },
+  {
+    "data": {
+      "source": "one",
+      "target": "two",
+      "label": "Edge from Node1 to Node2",
+      "weight": 3.323,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "four",
+      "target": "two",
+      "label": "Edge from Node1 to Node2",
+      "weight": 5.23,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "one",
+      "target": "two",
+      "label": "Edge from Node1 to Node2",
+      "weight": 0.323,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "two",
+      "target": "four",
+      "label": "Edge from Node1 to Node2",
+      "weight": 8.323,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "one",
+      "target": "three",
+      "label": "Edge from Node1 to Node2",
+      "weight": 2.44,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "one",
+      "target": "four",
+      "label": "Edge from Node1 to Node2",
+      "weight": 2.44,
+      "rank": 1
+    }
+  },
+  {
+    "data": {
+      "source": "two",
+      "target": "four",
+      "label": "Edge from Node1 to Node2",
+      "weight": 2.44,
+      "rank": 1
+    }
+  }
+]
