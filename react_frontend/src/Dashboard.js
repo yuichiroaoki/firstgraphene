@@ -15,7 +15,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './ListItems';
 import List from '@material-ui/core/List';
 import Cytoscape from './Cytoscape';
-import  {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import  {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Big from './Big';
 import Small from './Small';
 
@@ -79,9 +79,11 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9),
     },
   },
+  appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    height: '100vh',
+    height: '100vh', 
+    // height:`calc(100vh - 64px)`,
     overflow: 'auto',
   },
   paper: {
@@ -146,6 +148,7 @@ export default function Dashboard() {
           <List>{mainListItems}</List>
         </Drawer>
         <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
           <Switch>
             <Route exact path="/" component={Cytoscape} />
             <Route exact path="/big" component={Big} />

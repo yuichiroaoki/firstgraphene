@@ -34,7 +34,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="ヒストグラム" />
     </ListItem>
-    <ListItem button button component="a" target="blank" href="https://github.com/yuichiroaoki/firstgraphene">
+    <ListItem button component="a" target="blank" href="https://github.com/yuichiroaoki/firstgraphene">
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>

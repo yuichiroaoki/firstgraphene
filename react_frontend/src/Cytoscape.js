@@ -1,27 +1,34 @@
 import React from 'react';
 import CytoscapeComponent from 'react-cytoscapejs';
 import Box from '@material-ui/core/Box';
+import elements from './cy-conf/elements.js';
+import Style from './Style';
 
 class Cytoscape extends React.Component {
   constructor(prop) {
     super(prop);
+    this.state = {
+      elements: [],
+      height: window.innerHeight
+    }
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      elements : elements,
+      height: window.innerHeight-64
+    })
   }
 
     render() {
-      const elements = [
-        // ノードのデータ
-        { data: { id: 'one', label: 'Node 1' }, position: { x: 100, y: 300 } },
-        { data: { id: 'two', label: 'Node 2' }, position: { x: 500, y: 300 } },
-        // エッジのデータ
-        { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } }
-     ];
-
+      const {elements, height} = this.state;
         return (
-          <Box height='100%'>
+          <Box height={height}>
             <CytoscapeComponent 
-                elements={elements} 
+                elements={elements}
                 cy={(cy) => {this.cy = cy}}
                 style={ { height:'100%' } }
+                stylesheet={Style}
                 />
           </Box>
 
