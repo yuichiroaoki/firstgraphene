@@ -31,6 +31,8 @@ class Cytoscape extends React.Component {
                 }}
                 style={ { height:'100%' } }
                 stylesheet={Style}
+                minZoom={0.5}
+                maxZoom={2}
                 />
           </Box>
 

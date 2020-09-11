@@ -1,60 +1,39 @@
 import graphene
-from graphene.relay import Node
-from graphene_mongo import MongoengineConnectionField, MongoengineObjectType
-from models import Department as DepartmentModel
-from models import Employee as EmployeeModel
-from models import Role as RoleModel
+from graphene import relay
 
+from database import get_edges, get_label
 
-class Department(MongoengineObjectType):
-
+class NodeLabel(graphene.ObjectType):
     class Meta:
-        model = DepartmentModel
-        interfaces = (Node,)
+        interfaces = (relay.Node,)
 
-
-class Role(MongoengineObjectType):
-
+    label = graphene.String(description="The name of the node")
+    
+class NodeConnection(relay.Connection):
     class Meta:
-        model = RoleModel
-        interfaces = (Node,)
+        node = NodeLabel
 
-
-class Employee(MongoengineObjectType):
-
+class NodeEdges(graphene.ObjectType):
     class Meta:
-        model = EmployeeModel
-        interfaces = (Node,)
+        interfaces = (relay.Node,)
 
-class EmployeeInput(graphene.InputObjectType):
-    name = graphene.String(required=True)
+    target = relay.ConnectionField(
+        NodeConnection, description="A node of the target"
+    )
+    weight = graphene.Float()
+    rank = graphene.Int()
 
-class CreateEmployee(graphene.Mutation):
-    class Arguments:
-        employee_data = EmployeeInput(required=True)
+    def resolve_target(self, info, **args):
+        return [get_label(label) for label in self.target]
 
-    employee = graphene.Field(Employee)
 
-    def mutate(root, info, employee_data=None):
-        employee = Employee(
-            name=employee_data.name,
-        )
-        EmployeeModel(name=employee_data.name).save()
-        return CreateEmployee(employee=employee)
-
-# ... the Mutation Class
-class MyMutations(graphene.ObjectType):
-    create_employee = CreateEmployee.Field()
-
-#クエリの設定
 class Query(graphene.ObjectType):
-    node = Node.Field()
-    all_employees = MongoengineConnectionField(Employee)
-    all_role = MongoengineConnectionField(Role)
-    all_department = MongoengineConnectionField(Department)
-    role = graphene.Field(Role)
-    employee = graphene.Field(Employee)
-    department = graphene.Field(Department)
+    node = relay.Node.Field()
+    edges = graphene.Field(NodeEdges)
 
-schema = graphene.Schema(query=Query, types=[Department, Employee, Role],
- mutation=MyMutations)
+    def resolve_edges(root, info):
+        return get_edges("2")
+
+
+
+schema = graphene.Schema(query=Query)

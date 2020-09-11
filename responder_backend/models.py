@@ -1,7 +1,7 @@
 from datetime import datetime
 from mongoengine import Document
 from mongoengine.fields import (
-    DateTimeField, ReferenceField, StringField,
+    DateTimeField, ReferenceField, StringField, FloatField, IntField
 )
 
 
@@ -21,3 +21,24 @@ class Employee(Document):
     hired_on = DateTimeField(default=datetime.now)
     department = ReferenceField(Department)
     role = ReferenceField(Role)
+    
+class Nodes(Document):
+    meta = {'collection': 'nodes'}
+    label = StringField()
+
+class BigGraph(Document):
+    meta = {'collection': 'bigGraph'}
+    node1 = ReferenceField(Nodes)
+    label = StringField()
+    node2 = ReferenceField(Nodes)
+    weight = FloatField()
+    rank = IntField()
+
+class SmallGraph(Document):
+    meta = {'collection': 'bigGraph'}
+    node1 = ReferenceField(Nodes)
+    type = StringField()
+    node2 = ReferenceField(Nodes)
+    weight = FloatField()
+    rank = IntField()
+
