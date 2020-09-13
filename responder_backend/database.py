@@ -15,12 +15,12 @@ def setup():
     node7 = NodeLabel(id="7", label="Node7")
     node8 = NodeLabel(id="8", label="Node8")
 
-    edge1 = NodeEdges(id="1", target="2", weight=1.2, rank=1)
-    edge2 = NodeEdges(id="1", target="3", weight=4.2, rank=1)
-    edge3 = NodeEdges(id="2", target="5", weight=5.2, rank=1)
-    edge4 = NodeEdges(id="3", target="6", weight=1.2, rank=1)
-    edge5 = NodeEdges(id="3", target="5", weight=1.2, rank=2)
-    edge6 = NodeEdges(id="3", target="6", weight=1.2, rank=1)
+    edge1 = NodeEdges(source="1", target="2", weight=1.2, rank=1)
+    edge2 = NodeEdges(source="1", target="3", weight=4.2, rank=1)
+    edge3 = NodeEdges(source="2", target="5", weight=5.2, rank=1)
+    edge4 = NodeEdges(source="3", target="6", weight=2.2, rank=1)
+    edge5 = NodeEdges(source="3", target="5", weight=1.2, rank=2)
+    edge6 = NodeEdges(source="3", target="6", weight=1.2, rank=1)
     data = {
         "NodeLabel": {
             "1": node1,

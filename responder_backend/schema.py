@@ -16,12 +16,18 @@ class NodeConnection(relay.Connection):
 class NodeEdges(graphene.ObjectType):
     class Meta:
         interfaces = (relay.Node,)
-
+    
+    source = relay.ConnectionField(
+        NodeConnection, description="A node of the sucrce"
+    )
     target = relay.ConnectionField(
         NodeConnection, description="A node of the target"
     )
     weight = graphene.Float()
     rank = graphene.Int()
+
+    def resolve_source(self, info, **args):
+        return [get_label(label) for label in self.source]
 
     def resolve_target(self, info, **args):
         return [get_label(label) for label in self.target]
@@ -29,10 +35,10 @@ class NodeEdges(graphene.ObjectType):
 
 class Query(graphene.ObjectType):
     node = relay.Node.Field()
-    edges = graphene.Field(NodeEdges)
+    edges = graphene.Field(NodeEdges, id=graphene.ID(required=True))
 
-    def resolve_edges(root, info):
-        return get_edges("2")
+    def resolve_edges(root, info, id):
+        return get_edges(id)
 
 
 
